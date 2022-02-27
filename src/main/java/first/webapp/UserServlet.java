@@ -110,7 +110,7 @@ public class UserServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void listUser(HttpServletRequest request, HttpServletResponse response)
+	public void listUser(HttpServletRequest request, HttpServletResponse response)
 	throws SQLException, IOException, ServletException 
 	{
 		List < User > users = new ArrayList < > ();
@@ -148,14 +148,14 @@ public class UserServlet extends HttpServlet {
 	}
 
 	//method to redirect to register page
-	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
+	public void showNewForm(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	//method to get parameter, query database for existing user data and redirect to user edit page
-	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+	public void showEditForm(HttpServletRequest request, HttpServletResponse response)
 	throws SQLException, ServletException, IOException {
 		System.out.println("comes to showEditForm");
 		
@@ -197,7 +197,7 @@ public class UserServlet extends HttpServlet {
 	}
 
 	//method to update the user data
-	private void updateUser(HttpServletRequest request, HttpServletResponse response)
+	public void updateUser(HttpServletRequest request, HttpServletResponse response)
 	throws SQLException, IOException {
 		System.out.println("comes to updateUser");
 		
@@ -229,7 +229,7 @@ public class UserServlet extends HttpServlet {
 	}
 
 	//method to delete user
-	private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+	public void deleteUser(HttpServletRequest request, HttpServletResponse response)
 	throws SQLException, IOException {
 		System.out.println("comes to deleteUser");
         String name = request.getParameter("name");
@@ -243,7 +243,7 @@ public class UserServlet extends HttpServlet {
         response.sendRedirect("http://localhost:8085//lesson14/UserServlet");
 	}
 	
-    private void printSQLException(SQLException ex) {
+    public void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
