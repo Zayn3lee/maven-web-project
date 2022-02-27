@@ -6,21 +6,4 @@
       <class name="first.webapp.UserTest"/>
     </classes>
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="first.webapp.UserTest">
-        <methods>
-          <include name="testListUser"/>
-          <include name="testDeleteUser"/>
-          <include name="testDoGetHttpServletRequestHttpServletResponse"/>
-          <include name="testShowNewForm"/>
-          <include name="testUpdateUser"/>
-          <include name="testDoPostHttpServletRequestHttpServletResponse"/>
-          <include name="testGetConnection"/>
-          <include name="testShowEditForm"/>
-          <include name="testPrintSQLException"/>
-        </methods>
-      </class> <!-- first.webapp.UserTest -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
